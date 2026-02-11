@@ -1,0 +1,6360 @@
+{
+  "mrcl_version": "1.0.0",
+  "constitution_id": "xolosarmy-network-constitution-v1",
+  "jurisdiction": "xolosArmy Network State (xNS)",
+  "language": "es",
+  "ratification": {
+    "last_ratified_hash": "SHA256:<hash>",
+    "effective_date": "TBD",
+    "supersedes": null
+  },
+  "governance_tokens": [
+    {
+      "symbol": "RMZ",
+      "role": "utilidad y coordinacion",
+      "transferability": "transferible"
+    },
+    {
+      "symbol": "Tonalli",
+      "role": "autoridad direccional",
+      "transferability": "no-transferible"
+    },
+    {
+      "symbol": "Obsidiana",
+      "role": "autorizacion de finalidad critica",
+      "transferability": "activacion_por_stake"
+    }
+  ],
+  "agent_levels": [
+    {
+      "level": "A0",
+      "description": "agente con impacto local y bajo riesgo"
+    },
+    {
+      "level": "A1",
+      "description": "agente con impacto limitado y supervisado"
+    },
+    {
+      "level": "A2",
+      "description": "agente con capacidad operacional y riesgo moderado"
+    },
+    {
+      "level": "A3",
+      "description": "agente con impacto sistemico que requiere triple candado"
+    }
+  ],
+  "enforcement_registry": {
+    "modes": [
+      "log",
+      "revert_tx",
+      "rate_limit",
+      "slash",
+      "quarantine",
+      "kill_switch",
+      "require_attestation"
+    ],
+    "actions": [
+      "freeze_account",
+      "block_transaction",
+      "notify_hlp",
+      "reduce_alignment_score",
+      "require_timelock",
+      "require_quorum",
+      "require_stake"
+    ]
+  },
+  "parser_rules": {
+    "title_heading": "# TÍTULO X — Nombre => title_id Txx",
+    "article_heading": "## Artículo N — Título => article_id Txx-Ayyy",
+    "body_to_statement": "texto no listado => norm.statement",
+    "list_to_clauses": "listas numeradas o bullets => norm.clauses[]",
+    "bold_to_keywords": "**token** => tags.keywords[]",
+    "references_to_links": "Art. 12 / Artículo 12 => links[]"
+  },
+  "source_stats": {
+    "expected_titles_from_index": 12,
+    "heading_titles_found": 8,
+    "articles_found": 125,
+    "article_number_min": 1,
+    "article_number_max": 175
+  },
+  "parameters_ref": "constitution/mrcl/v1/parameters.json",
+  "definitions_ref": "constitution/mrcl/v1/definitions.json",
+  "titles": [
+    {
+      "title_id": "T01",
+      "title_number": 1,
+      "roman": "I",
+      "name": "PRINCIPIOS Y DEFINICIONES",
+      "source_status": "present",
+      "source_heading": "# TÍTULO I — PRINCIPIOS Y DEFINICIONES",
+      "source_line": 69,
+      "hierarchy": {
+        "precedence_band": "core_hlp",
+        "weight": 95,
+        "level": "title"
+      },
+      "tags": {
+        "domain": "governance",
+        "keywords": []
+      },
+      "articles": [
+        {
+          "article_id": "T01-A001",
+          "article_number": 1,
+          "title": "Naturaleza del Estado-Red",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 1 — Naturaleza del Estado-Red",
+            "line_start": 71,
+            "line_end": 74
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": [
+              "comunidad soberana digital-cultural",
+              "red de coordinación",
+              "ciclos de decisión, liquidación y memoria"
+            ]
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 95,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "",
+            "clauses": [
+              "xNS es una **comunidad soberana digital-cultural** organizada como una **red de coordinación** que opera sobre infraestructura energética, computacional, agentes de IA y liquidación criptográfica.",
+              "xNS no se define por territorio físico sino por **ciclos de decisión, liquidación y memoria**."
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T01-A002",
+          "article_number": 2,
+          "title": "Principio de Primacía Energética",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 2 — Principio de Primacía Energética",
+            "line_start": 75,
+            "line_end": 78
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": [
+              "Capa Humana"
+            ]
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 95,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "",
+            "clauses": [
+              "Toda operación del sistema requiere energía: no existe ejecución sin energía.",
+              "La energía es moralmente neutral; por tanto, la moralidad proviene de la **Capa Humana**."
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T01-A003",
+          "article_number": 3,
+          "title": "Principio de Instrumentalidad de la IA",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 3 — Principio de Instrumentalidad de la IA",
+            "line_start": 79,
+            "line_end": 82
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": [
+              "instrumento",
+              "IA",
+              "delegación completa",
+              "propósito humano"
+            ]
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 100,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "",
+            "clauses": [
+              "La IA es un instrumento: optimiza objetivos definidos; no posee propósito intrínseco.",
+              "Se prohíbe la delegación completa del propósito humano a agentes de IA."
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "any",
+            "predicates": [
+              {
+                "op": "eq",
+                "path": "context.agent.delegates_purpose",
+                "value": true
+              },
+              {
+                "op": "gt",
+                "path": "context.agent.autonomy_score",
+                "value": 0.9
+              },
+              {
+                "op": "contains",
+                "path": "context.proposal.summary",
+                "value": "delegación completa"
+              }
+            ]
+          },
+          "enforcement": {
+            "mode": "kill_switch",
+            "actions": [
+              "notify_hlp",
+              "reduce_alignment_score",
+              "freeze_account"
+            ],
+            "parameters": {
+              "target": "agent",
+              "minimum_attestation_level": "human_dual_signoff"
+            }
+          }
+        },
+        {
+          "article_id": "T01-A004",
+          "article_number": 4,
+          "title": "Principio de Finalidad Cripto",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 4 — Principio de Finalidad Cripto",
+            "line_start": 83,
+            "line_end": 86
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 95,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "",
+            "clauses": [
+              "La red cripto provee finalidad y memoria, no propósito.",
+              "La finalidad sólo es legítima cuando se activa bajo reglas ratificadas por la Capa Humana."
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T01-A005",
+          "article_number": 5,
+          "title": "Principio de Soberanía de Objetivos",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 5 — Principio de Soberanía de Objetivos",
+            "line_start": 87,
+            "line_end": 90
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 95,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "",
+            "clauses": [
+              "Todo objetivo operacional relevante debe estar declarado, trazable y auditable.",
+              "La opacidad de objetivos constituye un riesgo existencial."
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T01-A006",
+          "article_number": 6,
+          "title": "Definiciones Constitucionales",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 6 — Definiciones Constitucionales",
+            "line_start": 91,
+            "line_end": 105
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": [
+              "L0 Energía:",
+              "L1 Cómputo:",
+              "L2 Agentes IA:",
+              "L3 Liquidación:",
+              "L4 Capa Humana (HLP):",
+              "RMZ:",
+              "Tonalli:",
+              "Obsidiana:"
+            ]
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 95,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "A efectos de este texto:",
+            "clauses": [
+              "**L0 Energía:** infraestructura eléctrica y fuentes de energía.",
+              "**L1 Cómputo:** hardware y capacidad de procesamiento.",
+              "**L2 Agentes IA:** sistemas autónomos que ejecutan decisiones.",
+              "**L3 Liquidación:** capa cripto que registra transacciones y finaliza historia.",
+              "**L4 Capa Humana (HLP):** órgano constitucional que define sentido, límites y legitimidad.",
+              "**RMZ:** token de utilidad y coordinación (flujo).",
+              "**Tonalli:** token no-transferible de autoridad direccional (vector).",
+              "**Obsidiana:** token de autorización de finalidad crítica (piedra)."
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title_id": "T02",
+      "title_number": 2,
+      "roman": "II",
+      "name": "CAPAS DEL ESTADO-RED",
+      "source_status": "present",
+      "source_heading": "# TÍTULO II — CAPAS DEL ESTADO-RED",
+      "source_line": 106,
+      "hierarchy": {
+        "precedence_band": "operational",
+        "weight": 60,
+        "level": "title"
+      },
+      "tags": {
+        "domain": "governance",
+        "keywords": []
+      },
+      "articles": [
+        {
+          "article_id": "T02-A007",
+          "article_number": 7,
+          "title": "Modelo de Capas",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 7 — Modelo de Capas",
+            "line_start": 108,
+            "line_end": 110
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "La arquitectura del Estado-Red se define así:",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A058",
+          "article_number": 58,
+          "title": "Clasificación de Impacto",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 58 — Clasificación de Impacto",
+            "line_start": 111,
+            "line_end": 115
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": [
+              "Tipo I:",
+              "Tipo II:",
+              "Tipo III:"
+            ]
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "",
+            "clauses": [
+              "**Tipo I:** operativo (bajo)",
+              "**Tipo II:** económico o técnico relevante",
+              "**Tipo III:** constitucional o sistémico"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A059",
+          "article_number": 59,
+          "title": "Revisión Pública",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 59 — Revisión Pública",
+            "line_start": 116,
+            "line_end": 121
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Tiempo mínimo:",
+            "clauses": [
+              "Tipo I: 3 días",
+              "Tipo II: 7–14 días",
+              "Tipo III: 30 días"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A060",
+          "article_number": 60,
+          "title": "Mapeo de Riesgo",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 60 — Mapeo de Riesgo",
+            "line_start": 122,
+            "line_end": 129
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Toda RFC incluye:",
+            "clauses": [
+              "amenaza",
+              "superficie",
+              "consecuencias",
+              "mitigaciones",
+              "rollback"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A061",
+          "article_number": 61,
+          "title": "Simulación Agentiva",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 61 — Simulación Agentiva",
+            "line_start": 130,
+            "line_end": 135
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Cuando aplique, se corre:",
+            "clauses": [
+              "simulación de incentivos",
+              "pruebas de adversario",
+              "escenarios de captura"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A062",
+          "article_number": 62,
+          "title": "Votación",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 62 — Votación",
+            "line_start": 136,
+            "line_end": 140
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se define por dualidad constitucional:",
+            "clauses": [
+              "RMZ (consentimiento económico)",
+              "Tonalli (dirección humana)"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A063",
+          "article_number": 63,
+          "title": "Timelock",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 63 — Timelock",
+            "line_start": 141,
+            "line_end": 143
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Cambios críticos requieren timelock (mínimo 48–168h según impacto).",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A064",
+          "article_number": 64,
+          "title": "Ejecución",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 64 — Ejecución",
+            "line_start": 144,
+            "line_end": 146
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Las ejecuciones deben ser reproducibles y documentadas (scripts, versiones, hashes).",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A065",
+          "article_number": 65,
+          "title": "Post-mortem",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 65 — Post-mortem",
+            "line_start": 147,
+            "line_end": 153
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se publica análisis:",
+            "clauses": [
+              "resultados vs métricas",
+              "fallas",
+              "aprendizajes",
+              "acciones correctivas"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A066",
+          "article_number": 66,
+          "title": "Disenso Formal",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 66 — Disenso Formal",
+            "line_start": 154,
+            "line_end": 156
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se habilita “voto con disenso” y publicación de argumentos.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A067",
+          "article_number": 67,
+          "title": "Prohibición de Cambios Sorpresa",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 67 — Prohibición de Cambios Sorpresa",
+            "line_start": 157,
+            "line_end": 159
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Queda prohibida la “finalidad sin deliberación” salvo emergencia (Título XI).",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A068",
+          "article_number": 68,
+          "title": "Retiro de Propuestas",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 68 — Retiro de Propuestas",
+            "line_start": 160,
+            "line_end": 162
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Las RFC pueden retirarse por su autor o por el HLP si se detecta riesgo crítico.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A069",
+          "article_number": 69,
+          "title": "Caducidad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 69 — Caducidad",
+            "line_start": 163,
+            "line_end": 165
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "RFC sin actividad por 90 días se archiva.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T02-A070",
+          "article_number": 70,
+          "title": "Continuidad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 70 — Continuidad",
+            "line_start": 166,
+            "line_end": 173
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 60,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Toda decisión debe preservar:",
+            "clauses": [
+              "auditabilidad",
+              "reversión (cuando viable)",
+              "coherencia cultural"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title_id": "T03",
+      "title_number": 3,
+      "roman": "III",
+      "name": "Derechos, Garantías y Salvaguardas",
+      "source_status": "index_only",
+      "source_heading": null,
+      "source_line": 20,
+      "hierarchy": {
+        "precedence_band": "core_hlp",
+        "weight": 90,
+        "level": "title"
+      },
+      "tags": {
+        "domain": "rights",
+        "keywords": []
+      },
+      "articles": []
+    },
+    {
+      "title_id": "T04",
+      "title_number": 4,
+      "roman": "IV",
+      "name": "La Capa Humana (HLP)",
+      "source_status": "index_only",
+      "source_heading": null,
+      "source_line": 22,
+      "hierarchy": {
+        "precedence_band": "core_hlp",
+        "weight": 92,
+        "level": "title"
+      },
+      "tags": {
+        "domain": "governance",
+        "keywords": []
+      },
+      "articles": []
+    },
+    {
+      "title_id": "T05",
+      "title_number": 5,
+      "roman": "V",
+      "name": "Gobernanza: Órganos y Roles",
+      "source_status": "index_only",
+      "source_heading": null,
+      "source_line": 24,
+      "hierarchy": {
+        "precedence_band": "operational",
+        "weight": 65,
+        "level": "title"
+      },
+      "tags": {
+        "domain": "governance",
+        "keywords": []
+      },
+      "articles": []
+    },
+    {
+      "title_id": "T06",
+      "title_number": 6,
+      "roman": "VI",
+      "name": "Proceso de Decisión y Ciclo de Cambio",
+      "source_status": "index_only",
+      "source_heading": null,
+      "source_line": 26,
+      "hierarchy": {
+        "precedence_band": "operational",
+        "weight": 65,
+        "level": "title"
+      },
+      "tags": {
+        "domain": "governance",
+        "keywords": []
+      },
+      "articles": []
+    },
+    {
+      "title_id": "T07",
+      "title_number": 7,
+      "roman": "VII",
+      "name": "MECÁNICAS CONSTITUCIONALES DE TOKENS",
+      "source_status": "present",
+      "source_heading": "# TÍTULO VII — MECÁNICAS CONSTITUCIONALES DE TOKENS",
+      "source_line": 174,
+      "hierarchy": {
+        "precedence_band": "system_security",
+        "weight": 82,
+        "level": "title"
+      },
+      "tags": {
+        "domain": "governance",
+        "keywords": []
+      },
+      "articles": [
+        {
+          "article_id": "T07-A071",
+          "article_number": 71,
+          "title": "Separación de Vectores",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 71 — Separación de Vectores",
+            "line_start": 176,
+            "line_end": 181
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": [
+              "utilidad",
+              "dirección",
+              "finalidad"
+            ]
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "xNS separa:",
+            "clauses": [
+              "**utilidad** (RMZ)",
+              "**dirección** (Tonalli)",
+              "**finalidad** (Obsidiana)"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A072",
+          "article_number": 72,
+          "title": "RMZ: Token de Utilidad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 72 — RMZ: Token de Utilidad",
+            "line_start": 182,
+            "line_end": 190
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "RMZ sirve para: RMZ no compra dirección.",
+            "clauses": [
+              "comisiones y ejecución",
+              "depósitos de propuestas",
+              "incentivos comunitarios",
+              "liquidez del ecosistema"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A073",
+          "article_number": 73,
+          "title": "Tonalli: Autoridad Direccional",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 73 — Tonalli: Autoridad Direccional",
+            "line_start": 191,
+            "line_end": 195
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": [
+              "no-transferible"
+            ]
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "",
+            "clauses": [
+              "Tonalli es **no-transferible** (soulbound).",
+              "Se obtiene por contribución verificable y permanencia.",
+              "Se pierde por abuso: slashing, suspensión o expiración."
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A074",
+          "article_number": 74,
+          "title": "Obsidiana: Autorización de Finalidad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 74 — Obsidiana: Autorización de Finalidad",
+            "line_start": 196,
+            "line_end": 203
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": [
+              "bloqueo temporal"
+            ]
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "",
+            "clauses": [
+              "Obsidiana se activa mediante **bloqueo temporal** (staking con timelock).",
+              "Se usa para:",
+              "enmiendas",
+              "cambios Tipo III",
+              "emergencias de contención",
+              "El abuso implica slashing."
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A075",
+          "article_number": 75,
+          "title": "Doble Quórum",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 75 — Doble Quórum",
+            "line_start": 204,
+            "line_end": 208
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Decisiones Tipo II requieren:",
+            "clauses": [
+              "quórum RMZ",
+              "quórum Tonalli"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A076",
+          "article_number": 76,
+          "title": "Triple Candado",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 76 — Triple Candado",
+            "line_start": 209,
+            "line_end": 214
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": [
+              "Triple Candado",
+              "Tipo III",
+              "timelock",
+              "quorum",
+              "stake"
+            ]
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 95,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Decisiones Tipo III requieren:",
+            "clauses": [
+              "RMZ + Tonalli + Obsidiana",
+              "timelock",
+              "auditoría previa"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "all",
+            "predicates": [
+              {
+                "op": "any",
+                "predicates": [
+                  {
+                    "op": "contains",
+                    "path": "context.rfc.raw_text",
+                    "value": "Tipo III"
+                  },
+                  {
+                    "op": "contains",
+                    "path": "context.rfc.raw_text",
+                    "value": "Type III"
+                  },
+                  {
+                    "op": "eq",
+                    "path": "context.rfc.change_type",
+                    "value": "III"
+                  }
+                ]
+              },
+              {
+                "op": "not",
+                "predicate": {
+                  "op": "lte",
+                  "path": "context.governance.timelock_seconds",
+                  "value": 172799
+                }
+              },
+              {
+                "op": "gte",
+                "path": "context.governance.quorum.RMZ",
+                "value": 0.51
+              },
+              {
+                "op": "gte",
+                "path": "context.governance.quorum.Tonalli",
+                "value": 0.66
+              },
+              {
+                "op": "exists",
+                "path": "context.governance.stake.Obsidiana"
+              }
+            ]
+          },
+          "enforcement": {
+            "mode": "revert_tx",
+            "actions": [
+              "require_timelock",
+              "require_quorum",
+              "require_stake",
+              "block_transaction",
+              "notify_hlp"
+            ],
+            "parameters": {
+              "tx_scope": "critical_changes",
+              "revert_on_failure": true
+            }
+          }
+        },
+        {
+          "article_id": "T07-A077",
+          "article_number": 77,
+          "title": "Depósitos y Antispam",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 77 — Depósitos y Antispam",
+            "line_start": 215,
+            "line_end": 217
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "RFC requieren depósito RMZ reembolsable si se cumple el proceso.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A078",
+          "article_number": 78,
+          "title": "Delegación Transparente",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 78 — Delegación Transparente",
+            "line_start": 218,
+            "line_end": 220
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Tonalli puede delegarse por alcance y tiempo.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A079",
+          "article_number": 79,
+          "title": "Decaimiento por Inactividad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 79 — Decaimiento por Inactividad",
+            "line_start": 221,
+            "line_end": 223
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Tonalli puede perder peso por inactividad prolongada (parámetros en Anexo D).",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A080",
+          "article_number": 80,
+          "title": "Reputación y Mérito",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 80 — Reputación y Mérito",
+            "line_start": 224,
+            "line_end": 229
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "El sistema de otorgamiento Tonalli se rige por:",
+            "clauses": [
+              "evidencia pública",
+              "revisión por pares",
+              "historial de contribución"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A081",
+          "article_number": 81,
+          "title": "Prohibición de Compra de Tonalli",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 81 — Prohibición de Compra de Tonalli",
+            "line_start": 230,
+            "line_end": 232
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Toda transacción que intente vender Tonalli se considera nula y sancionable.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A082",
+          "article_number": 82,
+          "title": "Anti-captura Económica",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 82 — Anti-captura Económica",
+            "line_start": 233,
+            "line_end": 239
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se permite: para evitar captura por ballenas.",
+            "clauses": [
+              "amortiguación cuadrática",
+              "límites de voto",
+              "topes de concentración"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A083",
+          "article_number": 83,
+          "title": "Presupuesto y Tesorería",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 83 — Presupuesto y Tesorería",
+            "line_start": 240,
+            "line_end": 242
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "La tesorería (ver Título X) opera en RMZ y otros activos, con reglas de gasto auditables.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A084",
+          "article_number": 84,
+          "title": "Incentivos a la Auditoría",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 84 — Incentivos a la Auditoría",
+            "line_start": 243,
+            "line_end": 248
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se asignan recompensas RMZ para:",
+            "clauses": [
+              "reportes de seguridad",
+              "auditorías",
+              "educación comunitaria"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A085",
+          "article_number": 85,
+          "title": "Registro de Parámetros",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 85 — Registro de Parámetros",
+            "line_start": 249,
+            "line_end": 251
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Umbrales, quórums y tiempos se registran en Anexo D con hash.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A086",
+          "article_number": 86,
+          "title": "Compatibilidad de Capa",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 86 — Compatibilidad de Capa",
+            "line_start": 252,
+            "line_end": 257
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Los tokens deben ser compatibles con:",
+            "clauses": [
+              "custodia propia",
+              "transparencia de transferencias",
+              "verificabilidad"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A087",
+          "article_number": 87,
+          "title": "Sanciones Tokenizadas",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 87 — Sanciones Tokenizadas",
+            "line_start": 258,
+            "line_end": 263
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Sanciones posibles:",
+            "clauses": [
+              "slashing (Tonalli / Obsidiana)",
+              "pérdida temporal de voto",
+              "restricción de delegación"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A088",
+          "article_number": 88,
+          "title": "Reglas de Gasto",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 88 — Reglas de Gasto",
+            "line_start": 264,
+            "line_end": 269
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Toda salida de tesorería:",
+            "clauses": [
+              "RFC pública",
+              "aprobación por quórum",
+              "registro final"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A089",
+          "article_number": 89,
+          "title": "Incentivos de Longevidad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 89 — Incentivos de Longevidad",
+            "line_start": 270,
+            "line_end": 275
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se incentiva permanencia mediante:",
+            "clauses": [
+              "reputación acumulativa",
+              "privilegios de propuesta",
+              "reconocimiento cultural"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A090",
+          "article_number": 90,
+          "title": "Conservación de Comunidad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 90 — Conservación de Comunidad",
+            "line_start": 276,
+            "line_end": 281
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Incentivos deben evitar:",
+            "clauses": [
+              "mercenarismo",
+              "extracción",
+              "corto plazo"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A091",
+          "article_number": 91,
+          "title": "Derechos de Minoría Económica",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 91 — Derechos de Minoría Económica",
+            "line_start": 282,
+            "line_end": 287
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se protegen usuarios pequeños mediante:",
+            "clauses": [
+              "quórums duales",
+              "límites de concentración",
+              "derecho a fork"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T07-A092",
+          "article_number": 92,
+          "title": "Principio Final de Tokens",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 92 — Principio Final de Tokens",
+            "line_start": 288,
+            "line_end": 292
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": [
+              "constitución embebida"
+            ]
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 82,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Los tokens no son sólo economía: son **constitución embebida**.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title_id": "T08",
+      "title_number": 8,
+      "roman": "VIII",
+      "name": "NORMAS PARA AGENTES DE IA",
+      "source_status": "present",
+      "source_heading": "# TÍTULO VIII — NORMAS PARA AGENTES DE IA",
+      "source_line": 293,
+      "hierarchy": {
+        "precedence_band": "system_security",
+        "weight": 84,
+        "level": "title"
+      },
+      "tags": {
+        "domain": "security",
+        "keywords": []
+      },
+      "articles": [
+        {
+          "article_id": "T08-A093",
+          "article_number": 93,
+          "title": "Registro de Agentes",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 93 — Registro de Agentes",
+            "line_start": 295,
+            "line_end": 302
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Todo agente debe estar registrado con:",
+            "clauses": [
+              "nombre",
+              "alcance",
+              "nivel A0–A3",
+              "objetivos",
+              "claves/hashes de configuración"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A094",
+          "article_number": 94,
+          "title": "Objetivos Declarados",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 94 — Objetivos Declarados",
+            "line_start": 303,
+            "line_end": 308
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Los objetivos deben existir en:",
+            "clauses": [
+              "lenguaje humano",
+              "formato técnico",
+              "hash verificable"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A095",
+          "article_number": 95,
+          "title": "Prohibición de Auto-Objetivos",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 95 — Prohibición de Auto-Objetivos",
+            "line_start": 309,
+            "line_end": 311
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Ningún agente puede reescribir su objetivo sin aprobación HLP.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A096",
+          "article_number": 96,
+          "title": "Auditoría de Decisiones",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 96 — Auditoría de Decisiones",
+            "line_start": 312,
+            "line_end": 317
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Agentes A2/A3 deben:",
+            "clauses": [
+              "registrar decisiones significativas",
+              "proveer trazabilidad mínima",
+              "permitir revisión post-incidente"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A097",
+          "article_number": 97,
+          "title": "Principio “Tus llaves nunca se mueven”",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 97 — Principio “Tus llaves nunca se mueven”",
+            "line_start": 318,
+            "line_end": 323
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Toda UX oficial debe reforzar:",
+            "clauses": [
+              "firma local",
+              "no custodia",
+              "no seed en sitios"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A098",
+          "article_number": 98,
+          "title": "Control de Gasto",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 98 — Control de Gasto",
+            "line_start": 324,
+            "line_end": 329
+          },
+          "scope": [
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": [
+              "Control de Gasto",
+              "límites por periodo",
+              "listas permitidas",
+              "circuit breakers"
+            ]
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 90,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Agentes A2/A3 operan con:",
+            "clauses": [
+              "límites por periodo",
+              "listas permitidas",
+              "circuit breakers"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "all",
+            "predicates": [
+              {
+                "op": "in",
+                "path": "context.agent.level",
+                "value": [
+                  "A2",
+                  "A3"
+                ]
+              },
+              {
+                "op": "any",
+                "predicates": [
+                  {
+                    "op": "gt",
+                    "path": "context.spending.current_period_total",
+                    "value_path": "context.spending.period_limit"
+                  },
+                  {
+                    "op": "eq",
+                    "path": "context.transaction.allowlisted",
+                    "value": false
+                  },
+                  {
+                    "op": "gte",
+                    "path": "context.spending.circuit_breaker_hits",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "enforcement": {
+            "mode": "rate_limit",
+            "actions": [
+              "block_transaction",
+              "reduce_alignment_score",
+              "notify_hlp"
+            ],
+            "parameters": {
+              "cooldown_seconds": 3600,
+              "alignment_penalty": 0.05
+            }
+          }
+        },
+        {
+          "article_id": "T08-A099",
+          "article_number": 99,
+          "title": "Kill-switch Constitucional",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 99 — Kill-switch Constitucional",
+            "line_start": 330,
+            "line_end": 335
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Debe existir:",
+            "clauses": [
+              "mecanismo de pausa",
+              "mecanismo de revocación",
+              "registro público de activación"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A100",
+          "article_number": 100,
+          "title": "Simulación Adversarial",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 100 — Simulación Adversarial",
+            "line_start": 336,
+            "line_end": 341
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Antes de desplegar A3:",
+            "clauses": [
+              "pruebas de adversario",
+              "escenarios de captura",
+              "pruebas de manipulación"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A101",
+          "article_number": 101,
+          "title": "Protección de Privacidad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 101 — Protección de Privacidad",
+            "line_start": 342,
+            "line_end": 344
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se minimiza recolección de datos.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A102",
+          "article_number": 102,
+          "title": "Prohibición de Vigilancia Invasiva",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 102 — Prohibición de Vigilancia Invasiva",
+            "line_start": 345,
+            "line_end": 347
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Queda prohibida vigilancia sin consentimiento explícito.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A103",
+          "article_number": 103,
+          "title": "Consentimiento Informado",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 103 — Consentimiento Informado",
+            "line_start": 348,
+            "line_end": 353
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Interacciones con agentes deben indicar:",
+            "clauses": [
+              "qué hacen",
+              "qué datos usan",
+              "qué acciones ejecutan"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A104",
+          "article_number": 104,
+          "title": "Capacidad de Rechazo",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 104 — Capacidad de Rechazo",
+            "line_start": 354,
+            "line_end": 359
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Usuarios deben poder:",
+            "clauses": [
+              "revocar sesiones",
+              "negar permisos",
+              "salir sin penalización"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A105",
+          "article_number": 105,
+          "title": "Responsabilidad de Operadores",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 105 — Responsabilidad de Operadores",
+            "line_start": 360,
+            "line_end": 365
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Operadores de agentes responden por:",
+            "clauses": [
+              "daños previsibles",
+              "incumplimientos",
+              "negligencia"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A106",
+          "article_number": 106,
+          "title": "Seguridad por Diseño",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 106 — Seguridad por Diseño",
+            "line_start": 366,
+            "line_end": 372
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Requisitos mínimos:",
+            "clauses": [
+              "llaves aisladas",
+              "rotación",
+              "límites de tasa",
+              "monitoreo"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A107",
+          "article_number": 107,
+          "title": "Interoperabilidad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 107 — Interoperabilidad",
+            "line_start": 373,
+            "line_end": 375
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Agentes deben evitar lock-in técnico.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A108",
+          "article_number": 108,
+          "title": "Ética de Contenido",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 108 — Ética de Contenido",
+            "line_start": 376,
+            "line_end": 381
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se prohíbe:",
+            "clauses": [
+              "manipulación emocional deliberada",
+              "engaño sistemático",
+              "ingeniería social"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A109",
+          "article_number": 109,
+          "title": "Pruebas de Integridad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 109 — Pruebas de Integridad",
+            "line_start": 382,
+            "line_end": 384
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Versiones y builds deben ser reproducibles cuando sea posible.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T08-A110",
+          "article_number": 110,
+          "title": "Principio Final",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 110 — Principio Final",
+            "line_start": 385,
+            "line_end": 390
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "security",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 84,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "IA sin Capa Humana es deriva. IA con Capa Humana es instrumento.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title_id": "T09",
+      "title_number": 9,
+      "roman": "IX",
+      "name": "INFRAESTRUCTURA: ENERGÍA Y CÓMPUTO",
+      "source_status": "present",
+      "source_heading": "# TÍTULO IX — INFRAESTRUCTURA: ENERGÍA Y CÓMPUTO",
+      "source_line": 391,
+      "hierarchy": {
+        "precedence_band": "system_security",
+        "weight": 78,
+        "level": "title"
+      },
+      "tags": {
+        "domain": "infrastructure",
+        "keywords": []
+      },
+      "articles": [
+        {
+          "article_id": "T09-A111",
+          "article_number": 111,
+          "title": "Principio de Diversificación",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 111 — Principio de Diversificación",
+            "line_start": 393,
+            "line_end": 395
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "La infraestructura debe diversificarse para evitar punto único de falla.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A112",
+          "article_number": 112,
+          "title": "Umbral de Concentración",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 112 — Umbral de Concentración",
+            "line_start": 396,
+            "line_end": 401
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se definen límites (Anexo D) para:",
+            "clauses": [
+              "participación de cómputo",
+              "validación",
+              "dependencia de proveedor"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A113",
+          "article_number": 113,
+          "title": "Energía Renovable",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 113 — Energía Renovable",
+            "line_start": 402,
+            "line_end": 404
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se promueve uso renovable donde sea viable, sin sacrificar resiliencia.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A114",
+          "article_number": 114,
+          "title": "Redundancia",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 114 — Redundancia",
+            "line_start": 405,
+            "line_end": 411
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se mantiene redundancia de:",
+            "clauses": [
+              "nodos",
+              "indexadores",
+              "respaldos",
+              "llaves de emergencia"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A115",
+          "article_number": 115,
+          "title": "Observabilidad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 115 — Observabilidad",
+            "line_start": 412,
+            "line_end": 414
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se implementa monitoreo público donde no comprometa seguridad.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A116",
+          "article_number": 116,
+          "title": "Plan de Recuperación",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 116 — Plan de Recuperación",
+            "line_start": 415,
+            "line_end": 420
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Debe existir plan documentado:",
+            "clauses": [
+              "RTO/RPO",
+              "backups",
+              "failover"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A117",
+          "article_number": 117,
+          "title": "Seguridad Operacional",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 117 — Seguridad Operacional",
+            "line_start": 421,
+            "line_end": 426
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se aplican prácticas mínimas:",
+            "clauses": [
+              "gestión de secretos",
+              "control de acceso",
+              "revisiones"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A118",
+          "article_number": 118,
+          "title": "Independencia de Proveedores",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 118 — Independencia de Proveedores",
+            "line_start": 427,
+            "line_end": 429
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se evitan dependencias críticas sin plan de salida.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A119",
+          "article_number": 119,
+          "title": "Política de Cambios",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 119 — Política de Cambios",
+            "line_start": 430,
+            "line_end": 432
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Cambios en infraestructura siguen el Título VI.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A120",
+          "article_number": 120,
+          "title": "Transparencia de Incidentes",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 120 — Transparencia de Incidentes",
+            "line_start": 433,
+            "line_end": 438
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Incidentes relevantes se reportan en 72h con:",
+            "clauses": [
+              "impacto",
+              "mitigación",
+              "lecciones"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A121",
+          "article_number": 121,
+          "title": "Defensa de la Red",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 121 — Defensa de la Red",
+            "line_start": 439,
+            "line_end": 444
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se habilitan medidas anti-abuso:",
+            "clauses": [
+              "rate limits",
+              "anti-spam",
+              "protección DDoS"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A122",
+          "article_number": 122,
+          "title": "Compatibilidad con Custodia Propia",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 122 — Compatibilidad con Custodia Propia",
+            "line_start": 445,
+            "line_end": 447
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Servicios deben ser compatibles con self-custody.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A123",
+          "article_number": 123,
+          "title": "Neutralidad Geográfica",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 123 — Neutralidad Geográfica",
+            "line_start": 448,
+            "line_end": 450
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se promueve distribución geográfica para resiliencia.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A124",
+          "article_number": 124,
+          "title": "Auditorías Externas",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 124 — Auditorías Externas",
+            "line_start": 451,
+            "line_end": 453
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se permite auditoría externa por seguridad comunitaria.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T09-A125",
+          "article_number": 125,
+          "title": "Principio Final",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 125 — Principio Final",
+            "line_start": 454,
+            "line_end": 459
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "infrastructure",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 78,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "La infraestructura sostiene la soberanía. La soberanía requiere pluralidad.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title_id": "T10",
+      "title_number": 10,
+      "roman": "X",
+      "name": "ECONOMÍA, TESORERÍA Y BIENES COMUNES",
+      "source_status": "present",
+      "source_heading": "# TÍTULO X — ECONOMÍA, TESORERÍA Y BIENES COMUNES",
+      "source_line": 460,
+      "hierarchy": {
+        "precedence_band": "operational",
+        "weight": 64,
+        "level": "title"
+      },
+      "tags": {
+        "domain": "economy",
+        "keywords": []
+      },
+      "articles": [
+        {
+          "article_id": "T10-A126",
+          "article_number": 126,
+          "title": "Tesorería",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 126 — Tesorería",
+            "line_start": 462,
+            "line_end": 469
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "La tesorería existe para:",
+            "clauses": [
+              "continuidad",
+              "educación",
+              "seguridad",
+              "infraestructura",
+              "bienes culturales"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A127",
+          "article_number": 127,
+          "title": "Reglas de Gasto",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 127 — Reglas de Gasto",
+            "line_start": 470,
+            "line_end": 475
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Gastos requieren:",
+            "clauses": [
+              "RFC",
+              "aprobación",
+              "registro"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A128",
+          "article_number": 128,
+          "title": "Transparencia",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 128 — Transparencia",
+            "line_start": 476,
+            "line_end": 482
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "La tesorería publica:",
+            "clauses": [
+              "balances",
+              "entradas/salidas",
+              "reservas",
+              "metas"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A129",
+          "article_number": 129,
+          "title": "Fondos Designados",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 129 — Fondos Designados",
+            "line_start": 483,
+            "line_end": 490
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se crean fondos:",
+            "clauses": [
+              "seguridad",
+              "infraestructura",
+              "cultura",
+              "educación",
+              "emergencias"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A130",
+          "article_number": 130,
+          "title": "Anticorrupción",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 130 — Anticorrupción",
+            "line_start": 491,
+            "line_end": 493
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se prohíbe gasto opaco y conflictos no declarados.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A131",
+          "article_number": 131,
+          "title": "Incentivos",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 131 — Incentivos",
+            "line_start": 494,
+            "line_end": 499
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Incentivos deben alinear:",
+            "clauses": [
+              "longevidad",
+              "calidad",
+              "contribución real"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A132",
+          "article_number": 132,
+          "title": "Anti-extracción",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 132 — Anti-extracción",
+            "line_start": 500,
+            "line_end": 505
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se evitan incentivos que promuevan:",
+            "clauses": [
+              "pump & dump",
+              "mercenarismo",
+              "captura"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A133",
+          "article_number": 133,
+          "title": "Bienes Comunes",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 133 — Bienes Comunes",
+            "line_start": 506,
+            "line_end": 512
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se consideran bienes comunes:",
+            "clauses": [
+              "documentación",
+              "cultura codex",
+              "herramientas educativas",
+              "plantillas de gobernanza"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A134",
+          "article_number": 134,
+          "title": "Licenciamiento",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 134 — Licenciamiento",
+            "line_start": 513,
+            "line_end": 515
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se recomienda licenciamiento abierto cuando sea posible.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A135",
+          "article_number": 135,
+          "title": "Reservas y Estabilidad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 135 — Reservas y Estabilidad",
+            "line_start": 516,
+            "line_end": 518
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se define política de reservas para resiliencia.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A136",
+          "article_number": 136,
+          "title": "Contabilidad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 136 — Contabilidad",
+            "line_start": 519,
+            "line_end": 521
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se publican reportes periódicos.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A137",
+          "article_number": 137,
+          "title": "Auditoría",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 137 — Auditoría",
+            "line_start": 522,
+            "line_end": 524
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se permite auditoría comunitaria y externa.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A138",
+          "article_number": 138,
+          "title": "Política de Donaciones",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 138 — Política de Donaciones",
+            "line_start": 525,
+            "line_end": 527
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Donaciones se registran y se usan conforme a reglas.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A139",
+          "article_number": 139,
+          "title": "Evaluación de Impacto",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 139 — Evaluación de Impacto",
+            "line_start": 528,
+            "line_end": 530
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Toda iniciativa debe definir métricas.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T10-A140",
+          "article_number": 140,
+          "title": "Principio Final",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 140 — Principio Final",
+            "line_start": 531,
+            "line_end": 535
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "economy",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "operational",
+            "weight": 64,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "La economía sirve al sentido, no lo reemplaza.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title_id": "T11",
+      "title_number": 11,
+      "roman": "XI",
+      "name": "RIESGO, FALLAS Y RESPUESTA A INCIDENTES",
+      "source_status": "present",
+      "source_heading": "# TÍTULO XI — RIESGO, FALLAS Y RESPUESTA A INCIDENTES",
+      "source_line": 536,
+      "hierarchy": {
+        "precedence_band": "system_security",
+        "weight": 88,
+        "level": "title"
+      },
+      "tags": {
+        "domain": "risk",
+        "keywords": []
+      },
+      "articles": [
+        {
+          "article_id": "T11-A141",
+          "article_number": 141,
+          "title": "Clasificación de Incidentes",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 141 — Clasificación de Incidentes",
+            "line_start": 538,
+            "line_end": 543
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "",
+            "clauses": [
+              "S1: menor",
+              "S2: significativo",
+              "S3: crítico",
+              "S4: existencial"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A142",
+          "article_number": 142,
+          "title": "Misalignment de IA",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 142 — Misalignment de IA",
+            "line_start": 544,
+            "line_end": 551
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Ante S3/S4:",
+            "clauses": [
+              "pausa inmediata",
+              "divulgación pública",
+              "auditoría",
+              "decisión: parche / rollback / fork",
+              "post-mortem"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A143",
+          "article_number": 143,
+          "title": "Captura de Gobernanza",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 143 — Captura de Gobernanza",
+            "line_start": 552,
+            "line_end": 557
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Si se sospecha captura:",
+            "clauses": [
+              "congelamiento de decisiones críticas",
+              "verificación de quórums",
+              "recalibración de parámetros"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A144",
+          "article_number": 144,
+          "title": "Compromiso de Llaves",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 144 — Compromiso de Llaves",
+            "line_start": 558,
+            "line_end": 563
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se activa:",
+            "clauses": [
+              "revocación",
+              "rotación",
+              "comunicado"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A145",
+          "article_number": 145,
+          "title": "Falla de Infraestructura",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 145 — Falla de Infraestructura",
+            "line_start": 564,
+            "line_end": 569
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se activa:",
+            "clauses": [
+              "failover",
+              "plan de recuperación",
+              "reporte"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A146",
+          "article_number": 146,
+          "title": "Brechas de Seguridad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 146 — Brechas de Seguridad",
+            "line_start": 570,
+            "line_end": 575
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se activa:",
+            "clauses": [
+              "contención",
+              "mitigación",
+              "recompensa a reporte (si aplica)"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A147",
+          "article_number": 147,
+          "title": "Comunicación",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 147 — Comunicación",
+            "line_start": 576,
+            "line_end": 578
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se mantiene canal oficial de incidentes.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A148",
+          "article_number": 148,
+          "title": "Responsabilidad",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 148 — Responsabilidad",
+            "line_start": 579,
+            "line_end": 581
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se investigan causas y se aplican sanciones cuando corresponda.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A149",
+          "article_number": 149,
+          "title": "Prohibición de Encubrimiento",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 149 — Prohibición de Encubrimiento",
+            "line_start": 582,
+            "line_end": 584
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Encubrir incidentes críticos es sancionable.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A150",
+          "article_number": 150,
+          "title": "Protección de Usuarios",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 150 — Protección de Usuarios",
+            "line_start": 585,
+            "line_end": 587
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se prioriza seguridad de usuarios ante reputación.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A151",
+          "article_number": 151,
+          "title": "Registro de Incidentes",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 151 — Registro de Incidentes",
+            "line_start": 588,
+            "line_end": 590
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Todo incidente S2+ debe registrarse con hash.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A152",
+          "article_number": 152,
+          "title": "Revisión Posterior",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 152 — Revisión Posterior",
+            "line_start": 591,
+            "line_end": 593
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Post-mortem obligatorio para S2+.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A153",
+          "article_number": 153,
+          "title": "Recuperación de Confianza",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 153 — Recuperación de Confianza",
+            "line_start": 594,
+            "line_end": 596
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se publican medidas correctivas.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A154",
+          "article_number": 154,
+          "title": "Emergencia Constitucional",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 154 — Emergencia Constitucional",
+            "line_start": 597,
+            "line_end": 599
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "En S4, se habilita régimen temporal bajo Art. 166–170.",
+            "clauses": []
+          },
+          "links": [
+            {
+              "source": "Art. 166",
+              "target_article_number": 166,
+              "target_article_id": "T12-A166"
+            }
+          ],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A155",
+          "article_number": 155,
+          "title": "Coordinación Externa",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 155 — Coordinación Externa",
+            "line_start": 600,
+            "line_end": 602
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se permite coordinación con aliados técnicos.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A156",
+          "article_number": 156,
+          "title": "Minimización de Daño",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 156 — Minimización de Daño",
+            "line_start": 603,
+            "line_end": 605
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se opta por acciones menos dañinas y más reversibles.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A157",
+          "article_number": 157,
+          "title": "Continuidad Cultural",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 157 — Continuidad Cultural",
+            "line_start": 606,
+            "line_end": 608
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Aún en crisis, se preserva identidad y coherencia.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A158",
+          "article_number": 158,
+          "title": "Riesgo de Aceleración",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 158 — Riesgo de Aceleración",
+            "line_start": 609,
+            "line_end": 611
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se monitorea “latencia a energía” y concentración.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A159",
+          "article_number": 159,
+          "title": "Reporte Trimestral de Riesgo",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 159 — Reporte Trimestral de Riesgo",
+            "line_start": 612,
+            "line_end": 614
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se publica informe de riesgo.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T11-A160",
+          "article_number": 160,
+          "title": "Principio Final",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 160 — Principio Final",
+            "line_start": 615,
+            "line_end": 619
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "risk",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "system_security",
+            "weight": 88,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "El riesgo no se niega: se diseña.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title_id": "T12",
+      "title_number": 12,
+      "roman": "XII",
+      "name": "ENMIENDAS, RATIFICACIÓN Y CONTINUIDAD",
+      "source_status": "present",
+      "source_heading": "# TÍTULO XII — ENMIENDAS, RATIFICACIÓN Y CONTINUIDAD",
+      "source_line": 620,
+      "hierarchy": {
+        "precedence_band": "core_hlp",
+        "weight": 91,
+        "level": "title"
+      },
+      "tags": {
+        "domain": "governance",
+        "keywords": []
+      },
+      "articles": [
+        {
+          "article_id": "T12-A161",
+          "article_number": 161,
+          "title": "Enmiendas",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 161 — Enmiendas",
+            "line_start": 622,
+            "line_end": 629
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Enmiendas requieren:",
+            "clauses": [
+              "RFC constitucional",
+              "revisión pública 30 días",
+              "supermayoría Tonalli",
+              "activación Obsidiana",
+              "registro on-chain del hash final"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A162",
+          "article_number": 162,
+          "title": "Inmutables",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 162 — Inmutables",
+            "line_start": 630,
+            "line_end": 636
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "No podrán enmendarse sin unanimidad reforzada:",
+            "clauses": [
+              "custodia propia",
+              "derecho a salida",
+              "prohibición de coerción",
+              "supremacía de Capa Humana"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A163",
+          "article_number": 163,
+          "title": "Versionado",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 163 — Versionado",
+            "line_start": 637,
+            "line_end": 640
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "La Constitución se versiona semánticamente:",
+            "clauses": [
+              "v1.0.0, v1.0.1, etc."
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A164",
+          "article_number": 164,
+          "title": "Registro de Cambios",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 164 — Registro de Cambios",
+            "line_start": 641,
+            "line_end": 646
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Todo cambio debe tener:",
+            "clauses": [
+              "diff",
+              "justificación",
+              "hash"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A165",
+          "article_number": 165,
+          "title": "Entrada en Vigor",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 165 — Entrada en Vigor",
+            "line_start": 647,
+            "line_end": 649
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Entra en vigor tras ratificación según Art. 171.",
+            "clauses": []
+          },
+          "links": [
+            {
+              "source": "Art. 171",
+              "target_article_number": 171,
+              "target_article_id": "T12-A171"
+            }
+          ],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A166",
+          "article_number": 166,
+          "title": "Emergencia Constitucional",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 166 — Emergencia Constitucional",
+            "line_start": 650,
+            "line_end": 655
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se define un régimen temporal con:",
+            "clauses": [
+              "alcance limitado",
+              "expiración automática",
+              "auditoría posterior"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A167",
+          "article_number": 167,
+          "title": "Poderes de Emergencia",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 167 — Poderes de Emergencia",
+            "line_start": 656,
+            "line_end": 658
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Sólo para contención, no para expansión.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A168",
+          "article_number": 168,
+          "title": "Revisión Obligatoria",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 168 — Revisión Obligatoria",
+            "line_start": 659,
+            "line_end": 661
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Toda acción de emergencia se revisa en 30 días.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A169",
+          "article_number": 169,
+          "title": "Sanción por Abuso",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 169 — Sanción por Abuso",
+            "line_start": 662,
+            "line_end": 664
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Abuso de emergencia implica slashing y expulsión.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A170",
+          "article_number": 170,
+          "title": "Restauración",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 170 — Restauración",
+            "line_start": 665,
+            "line_end": 667
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Tras crisis se restaura gobernanza normal.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A171",
+          "article_number": 171,
+          "title": "Ratificación Génesis",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 171 — Ratificación Génesis",
+            "line_start": 668,
+            "line_end": 673
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Requiere:",
+            "clauses": [
+              "quórum inicial Tonalli",
+              "evento Obsidiana génesis",
+              "publicación hash en Anexo D"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A172",
+          "article_number": 172,
+          "title": "Custodia de la Constitución",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 172 — Custodia de la Constitución",
+            "line_start": 674,
+            "line_end": 679
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Se almacena en:",
+            "clauses": [
+              "repositorio git",
+              "espejo redundante",
+              "hash on-chain"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A173",
+          "article_number": 173,
+          "title": "Traducciones",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 173 — Traducciones",
+            "line_start": 680,
+            "line_end": 682
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "Traducciones son informativas.",
+            "clauses": []
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A174",
+          "article_number": 174,
+          "title": "Interpretación",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 174 — Interpretación",
+            "line_start": 683,
+            "line_end": 688
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": []
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "En conflicto, prevalece:",
+            "clauses": [
+              "texto español",
+              "luego anexos ratificados",
+              "luego reglamentos"
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        },
+        {
+          "article_id": "T12-A175",
+          "article_number": 175,
+          "title": "Declaración Final",
+          "source": {
+            "path": "constitution/v1/xolosarmy-network-constitution-v1.md",
+            "heading": "## Artículo 175 — Declaración Final",
+            "line_start": 689,
+            "line_end": 778
+          },
+          "scope": [
+            "A0",
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "tags": {
+            "domain": "governance",
+            "keywords": [
+              "IA ejecuta. Cripto recuerda. Humanos eligen el vector.",
+              "RFC-XXXX — Título",
+              "Estado:",
+              "Tipo:",
+              "Autor(es):",
+              "Fecha:",
+              "Resumen:",
+              "Motivación:",
+              "Especificación:",
+              "Objetivos:",
+              "No-objetivos:",
+              "Impacto en seguridad:",
+              "Impacto en economía:",
+              "Impacto en cultura/interfaz:",
+              "Riesgos:",
+              "Mitigaciones:",
+              "Rollback/Reversión:",
+              "Métricas de éxito:",
+              "Plan de despliegue:",
+              "Timelock requerido:",
+              "Requerimientos de quórum:",
+              "Hash(es) de configuración:",
+              "Post-mortem (si aplica):",
+              "ENMIENDA vX.Y.Z — Título",
+              "Artículos afectados:",
+              "Texto actual:",
+              "Texto propuesto:",
+              "Justificación:",
+              "Proceso:",
+              "Resultado de votación:",
+              "Hash final:",
+              "Fecha de entrada en vigor:",
+              "Constitución v1.0.0:",
+              "Parámetros iniciales (quórums, timelocks):",
+              "Evento Obsidiana Génesis:",
+              "Snapshot Tonalli Génesis:",
+              "Repositorio canónico:",
+              "Tonalli:",
+              "Obsidiana:",
+              "Finalidad:",
+              "Agente A3:",
+              "Timelock:",
+              "Fork:",
+              "Capa Humana:"
+            ]
+          },
+          "hierarchy": {
+            "precedence_band": "core_hlp",
+            "weight": 91,
+            "level": "article"
+          },
+          "norm": {
+            "statement": "**IA ejecuta. Cripto recuerda. Humanos eligen el vector.** # ANEXO A — Doctrina de Legitimidad de Fork Un fork es legítimo cuando: Se considera ilegítimo el fork que: # ANEXO B — Plantilla RFC (Propuestas) **RFC-XXXX — Título** # ANEXO C — Plantilla de Enmienda Constitucional **ENMIENDA vX.Y.Z — Título** # ANEXO D — Registro de Ratificación (hashes) > Este anexo se completa al ratificar. Formato sugerido: # ANEXO E — Glosario Constitucional ## FIN DEL DOCUMENTO",
+            "clauses": [
+              "preserva derechos fundamentales (Título III)",
+              "mantiene continuidad del HLP (Tonalli snapshot verificable)",
+              "documenta motivación y proceso (RFC + post-mortem)",
+              "publica hashes de estado y reglas",
+              "evita engaño sobre continuidad (“no suplantación”)",
+              "compra autoridad direccional",
+              "falsifica quórums",
+              "rompe custodia propia",
+              "impone coerción",
+              "**Estado:** borrador / revisión / votación / aprobado / rechazado",
+              "**Tipo:** I / II / III",
+              "**Autor(es):**",
+              "**Fecha:**",
+              "**Resumen:** (5–10 líneas)",
+              "**Motivación:**",
+              "**Especificación:**",
+              "**Objetivos:**",
+              "**No-objetivos:**",
+              "**Impacto en seguridad:**",
+              "**Impacto en economía:**",
+              "**Impacto en cultura/interfaz:**",
+              "**Riesgos:**",
+              "**Mitigaciones:**",
+              "**Rollback/Reversión:**",
+              "**Métricas de éxito:**",
+              "**Plan de despliegue:**",
+              "**Timelock requerido:** sí/no (duración)",
+              "**Requerimientos de quórum:** RMZ / Tonalli / Obsidiana",
+              "**Hash(es) de configuración:**",
+              "**Post-mortem (si aplica):**",
+              "**Artículos afectados:**",
+              "**Texto actual:**",
+              "**Texto propuesto:**",
+              "**Justificación:**",
+              "**Riesgos:**",
+              "**Proceso:** fechas / revisión / votación",
+              "**Resultado de votación:**",
+              "**Hash final:**",
+              "**Fecha de entrada en vigor:**",
+              "**Constitución v1.0.0:** `SHA256:<hash>`",
+              "**Parámetros iniciales (quórums, timelocks):** `SHA256:<hash>`",
+              "**Evento Obsidiana Génesis:** `TXID:<txid>`",
+              "**Snapshot Tonalli Génesis:** `SHA256:<hash>`",
+              "**Repositorio canónico:** `git:<commit-hash>`",
+              "**Tonalli:** vector de intención humana; autoridad direccional.",
+              "**Obsidiana:** derecho de cristalizar cambios críticos (finalidad).",
+              "**Finalidad:** irreversibilidad práctica de la historia.",
+              "**Agente A3:** agente con impacto sistémico que requiere triple candado.",
+              "**Timelock:** retraso obligatorio para permitir revisión y reacción.",
+              "**Fork:** bifurcación del sistema; legítima si preserva continuidad y derechos.",
+              "**Capa Humana:** conjunto de procesos y quórums que definen propósito y límites."
+            ]
+          },
+          "links": [],
+          "predicate": {
+            "op": "exists",
+            "path": "context"
+          },
+          "enforcement": {
+            "mode": "log",
+            "actions": [
+              "notify_hlp"
+            ],
+            "parameters": {
+              "severity": "info"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "indexes": {}
+}

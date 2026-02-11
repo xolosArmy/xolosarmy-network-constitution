@@ -1,0 +1,348 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xolosarmy.network/schemas/mrcl/v1/mrcl.schema.json",
+  "title": "Machine-Readable Constitutional Layer (MRCL) v1",
+  "type": "object",
+  "required": [
+    "mrcl_version",
+    "constitution_id",
+    "jurisdiction",
+    "language",
+    "ratification",
+    "governance_tokens",
+    "agent_levels",
+    "enforcement_registry",
+    "parameters_ref",
+    "definitions_ref",
+    "titles",
+    "indexes"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "mrcl_version": { "type": "string" },
+    "constitution_id": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "language": { "type": "string" },
+    "ratification": {
+      "type": "object",
+      "required": ["last_ratified_hash", "effective_date", "supersedes"],
+      "properties": {
+        "last_ratified_hash": { "type": "string" },
+        "effective_date": { "type": "string" },
+        "supersedes": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "governance_tokens": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["symbol", "role", "transferability"],
+        "properties": {
+          "symbol": { "type": "string" },
+          "role": { "type": "string" },
+          "transferability": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "agent_levels": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["level", "description"],
+        "properties": {
+          "level": {
+            "type": "string",
+            "enum": ["A0", "A1", "A2", "A3"]
+          },
+          "description": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "enforcement_registry": {
+      "type": "object",
+      "required": ["modes", "actions"],
+      "properties": {
+        "modes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "log",
+              "revert_tx",
+              "rate_limit",
+              "slash",
+              "quarantine",
+              "kill_switch",
+              "require_attestation"
+            ]
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "freeze_account",
+              "block_transaction",
+              "notify_hlp",
+              "reduce_alignment_score",
+              "require_timelock",
+              "require_quorum",
+              "require_stake"
+            ]
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "parameters_ref": { "type": "string" },
+    "definitions_ref": { "type": "string" },
+    "titles": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/title" }
+    },
+    "indexes": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "title": {
+      "type": "object",
+      "required": [
+        "title_id",
+        "title_number",
+        "name",
+        "source_status",
+        "hierarchy",
+        "tags",
+        "articles"
+      ],
+      "properties": {
+        "title_id": {
+          "type": "string",
+          "pattern": "^T\\d{2}$"
+        },
+        "title_number": { "type": "integer", "minimum": 1 },
+        "roman": { "type": "string" },
+        "name": { "type": "string" },
+        "source_status": {
+          "type": "string",
+          "enum": ["present", "index_only"]
+        },
+        "source_heading": { "type": ["string", "null"] },
+        "source_line": { "type": ["integer", "null"] },
+        "hierarchy": { "$ref": "#/$defs/hierarchy" },
+        "tags": { "$ref": "#/$defs/tags" },
+        "articles": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/article" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "article": {
+      "type": "object",
+      "required": [
+        "article_id",
+        "article_number",
+        "title",
+        "source",
+        "scope",
+        "tags",
+        "hierarchy",
+        "norm",
+        "links",
+        "predicate",
+        "enforcement"
+      ],
+      "properties": {
+        "article_id": {
+          "type": "string",
+          "pattern": "^T\\d{2}-A\\d{3}$"
+        },
+        "article_number": { "type": "integer", "minimum": 1 },
+        "title": { "type": "string" },
+        "source": {
+          "type": "object",
+          "required": ["path", "heading", "line_start", "line_end"],
+          "properties": {
+            "path": { "type": "string" },
+            "heading": { "type": "string" },
+            "line_start": { "type": "integer", "minimum": 1 },
+            "line_end": { "type": "integer", "minimum": 1 }
+          },
+          "additionalProperties": true
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["A0", "A1", "A2", "A3"]
+          }
+        },
+        "tags": { "$ref": "#/$defs/tags" },
+        "hierarchy": { "$ref": "#/$defs/hierarchy" },
+        "norm": {
+          "type": "object",
+          "required": ["statement", "clauses"],
+          "properties": {
+            "statement": { "type": "string" },
+            "clauses": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["source", "target_article_number", "target_article_id"],
+            "properties": {
+              "source": { "type": "string" },
+              "target_article_number": { "type": "integer", "minimum": 1 },
+              "target_article_id": {
+                "type": ["string", "null"],
+                "pattern": "^T\\d{2}-A\\d{3}$"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "predicate": { "$ref": "#/$defs/predicate" },
+        "enforcement": { "$ref": "#/$defs/enforcement" }
+      },
+      "additionalProperties": true
+    },
+    "tags": {
+      "type": "object",
+      "required": ["domain", "keywords"],
+      "properties": {
+        "domain": { "type": "string" },
+        "keywords": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "hierarchy": {
+      "type": "object",
+      "required": ["precedence_band", "weight", "level"],
+      "properties": {
+        "precedence_band": {
+          "type": "string",
+          "enum": [
+            "core_hlp",
+            "system_security",
+            "operational",
+            "recommendations"
+          ]
+        },
+        "weight": { "type": "number", "minimum": 0, "maximum": 100 },
+        "level": {
+          "type": "string",
+          "enum": ["title", "article"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "enforcement": {
+      "type": "object",
+      "required": ["mode", "actions", "parameters"],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "log",
+            "revert_tx",
+            "rate_limit",
+            "slash",
+            "quarantine",
+            "kill_switch",
+            "require_attestation"
+          ]
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "freeze_account",
+              "block_transaction",
+              "notify_hlp",
+              "reduce_alignment_score",
+              "require_timelock",
+              "require_quorum",
+              "require_stake"
+            ]
+          }
+        },
+        "parameters": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "predicate": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["op", "path"],
+          "properties": {
+            "op": { "const": "exists" },
+            "path": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["op", "path"],
+          "properties": {
+            "op": {
+              "enum": ["eq", "neq", "gt", "gte", "lt", "lte", "in", "contains"]
+            },
+            "path": { "type": "string" },
+            "value": {},
+            "value_path": { "type": "string" }
+          },
+          "oneOf": [
+            { "required": ["value"] },
+            { "required": ["value_path"] }
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["op", "predicate"],
+          "properties": {
+            "op": { "const": "not" },
+            "predicate": { "$ref": "#/$defs/predicate" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["op", "predicates"],
+          "properties": {
+            "op": {
+              "enum": ["all", "any"]
+            },
+            "predicates": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/predicate" }
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

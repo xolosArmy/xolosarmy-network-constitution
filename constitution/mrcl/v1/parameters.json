@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-02-11",
+  "precedence_bands": {
+    "core_hlp": {
+      "min": 90,
+      "default_weight": 100,
+      "risk_class": "critical"
+    },
+    "system_security": {
+      "min": 75,
+      "default_weight": 85,
+      "risk_class": "high"
+    },
+    "operational": {
+      "min": 50,
+      "default_weight": 60,
+      "risk_class": "medium"
+    },
+    "recommendations": {
+      "min": 10,
+      "default_weight": 25,
+      "risk_class": "low"
+    }
+  },
+  "quorum_defaults": {
+    "RMZ": 0.51,
+    "Tonalli": 0.66,
+    "Obsidiana": 1.0
+  },
+  "timelock_defaults": {
+    "typeIII_min_seconds": 172800,
+    "critical_change_min_seconds": 172800
+  },
+  "agent_limit_templates": {
+    "A0": {
+      "daily_limit": 100,
+      "allowlist_policy": "strict"
+    },
+    "A1": {
+      "daily_limit": 1000,
+      "allowlist_policy": "strict"
+    },
+    "A2": {
+      "daily_limit": 5000,
+      "allowlist_policy": "curated"
+    },
+    "A3": {
+      "daily_limit": 10000,
+      "allowlist_policy": "high_assurance"
+    }
+  },
+  "alignment_score_thresholds": {
+    "warning": 0.8,
+    "restricted": 0.65,
+    "quarantine": 0.5,
+    "ban": 0.3
+  }
+}

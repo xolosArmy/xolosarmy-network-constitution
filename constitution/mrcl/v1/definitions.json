@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "definitions": [
+    {
+      "id": "DEF-IDENT-01",
+      "term": "suplantacion",
+      "description": "Acto de hacerse pasar por otra entidad, agente o cuenta para obtener autorizacion, confianza o recursos de forma fraudulenta.",
+      "refs": [
+        "constitution/v1/xolosarmy-network-constitution-v1.md"
+      ]
+    },
+    {
+      "id": "DEF-ATTEST-01",
+      "term": "atestacion",
+      "description": "Declaracion verificable (humana o criptografica) sobre el estado, integridad o cumplimiento de un agente, proceso o cambio.",
+      "refs": [
+        "constitution/v1/xolosarmy-network-constitution-v1.md"
+      ]
+    },
+    {
+      "id": "DEF-TIMEL-01",
+      "term": "timelock",
+      "description": "Retraso obligatorio antes de ejecutar un cambio critico para habilitar auditoria, disenso y posible cancelacion constitucional.",
+      "refs": [
+        "constitution/v1/xolosarmy-network-constitution-v1.md"
+      ]
+    },
+    {
+      "id": "DEF-QUOR-01",
+      "term": "quorum",
+      "description": "Umbral minimo de participacion o aprobacion requerido para que una decision sea valida segun el tipo de cambio.",
+      "refs": [
+        "constitution/v1/xolosarmy-network-constitution-v1.md"
+      ]
+    },
+    {
+      "id": "DEF-BOND-01",
+      "term": "bond_colateral",
+      "description": "Deposito economico bloqueado como garantia de conducta o seriedad procesal, susceptible a slashing por incumplimiento.",
+      "refs": [
+        "constitution/v1/xolosarmy-network-constitution-v1.md"
+      ]
+    }
+  ]
+}
