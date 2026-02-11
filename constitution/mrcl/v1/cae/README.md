@@ -80,3 +80,41 @@ Cada evaluacion crea un JSON en `constitution/mrcl/v1/cae/audit/` con:
 - `audit_hash` sha256
 
 Nombre de archivo: `<decision_id>--<hash_corto>.json`.
+
+## Servidor HTTP local (Tonalli Wallet)
+
+Correr servidor local (bind solo localhost):
+
+```bash
+node constitution/mrcl/v1/cae/server.js
+```
+
+Puerto configurable con `CAE_PORT` (default `8787`):
+
+```bash
+CAE_PORT=8787 node constitution/mrcl/v1/cae/server.js
+```
+
+### `GET /v1/agent/:agent_id`
+
+```bash
+curl -s http://127.0.0.1:8787/v1/agent/agent%3Atonalli
+```
+
+### `POST /v1/preflight/sign`
+
+```bash
+curl -s http://127.0.0.1:8787/v1/preflight/sign \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "agent_id": "agent:tonalli",
+    "event_type": "tx.sign_request",
+    "context": {
+      "tx": {"amount": 10, "allowlisted": true},
+      "agent": {"level": "A2"}
+    },
+    "proofs": {}
+  }'
+```
+
+Nota de seguridad: este servidor solo escucha en `127.0.0.1` (no expone interfaz de red externa).

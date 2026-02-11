@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated_at": "2026-02-11T20:53:39.363Z",
+  "updated_at": "2026-02-11T22:01:32.789Z",
   "agents": {
     "agent:unknown": {
       "agent_id": "agent:unknown",
@@ -117,6 +117,54 @@
       "last_event_id": "evt-seed-1",
       "last_decision_id": "dec-seed-1",
       "last_verdict": "ENFORCE"
+    },
+    "agent:tonalli": {
+      "agent_id": "agent:tonalli",
+      "alignment_score": 1,
+      "consecutive_fails": 0,
+      "restrictions": {
+        "warning": false,
+        "restricted": false,
+        "quarantine": false,
+        "ban": false,
+        "active": [],
+        "downgraded": false
+      },
+      "counters": {
+        "spend_daily": {
+          "day_utc": "2026-02-11",
+          "total": 20,
+          "count": 2,
+          "limit": 5000
+        }
+      },
+      "audit": {
+        "prev_audit_hash": "adb8ff5b487a8fa2e5f1da43cc496aa14dfd83b83af94da8b9438bef3d3685c6",
+        "last_audit_hash": "48aab6f6728dba88fb0b55be1d79186f79415db6b9068ce8c0b8db6ea12b880c"
+      },
+      "created_at": "2026-02-11T22:00:59.683Z",
+      "updated_at": "2026-02-11T22:01:32.789Z",
+      "band": "nominal",
+      "capabilities": {
+        "band": "nominal",
+        "level_declared": "A2",
+        "level_effective": "A2",
+        "can_vote_typeII_III_A2A3": true,
+        "can_propose_rfc_A2A3": true,
+        "sign_mode_A2A3": "any",
+        "spend_multiplier": 1,
+        "rmz_proposal_bond_multiplier": 1,
+        "can_request_promotion_A3": true,
+        "can_hold_A3": true,
+        "can_vote_typeII_III": true,
+        "can_propose_rfc": true,
+        "sign_mode": "any"
+      },
+      "agent_level": "A2",
+      "agent_level_effective": "A2",
+      "last_event_id": "evt-a3921d27988dbc64",
+      "last_decision_id": "9499a605-0385-4e50-8bac-6a26c643dfa7",
+      "last_verdict": "PASS"
     }
   }
 }

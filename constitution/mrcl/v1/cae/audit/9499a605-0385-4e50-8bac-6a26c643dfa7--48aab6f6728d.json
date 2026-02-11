@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-02-11T22:01:32.786Z",
+  "event_snapshot": {
+    "event_id": "evt-a3921d27988dbc64",
+    "event_type": "tx.sign_request",
+    "timestamp": "2026-02-11T22:01:32.783Z",
+    "actor": {
+      "agent_id": "agent:tonalli",
+      "agent_level": "A2",
+      "current_score": 1
+    },
+    "context": {
+      "tx": {
+        "amount": 10,
+        "allowlisted": true
+      },
+      "agent": {
+        "level": "A2"
+      },
+      "transaction": {
+        "allowlisted": true
+      }
+    },
+    "proofs": {}
+  },
+  "decision": {
+    "decision_id": "9499a605-0385-4e50-8bac-6a26c643dfa7",
+    "event_id": "evt-a3921d27988dbc64",
+    "verdict": "PASS",
+    "applied_articles": [],
+    "results": [
+      {
+        "article_id": "T01-A003",
+        "result": "PASS",
+        "precedence": 90,
+        "weight": 1,
+        "severity_band": "core_hlp",
+        "evidence": {
+          "predicate_kind": "violation_if_true",
+          "predicate_op": "any",
+          "predicate_matched": false,
+          "violation": false,
+          "enforcement_mode": "kill_switch"
+        }
+      },
+      {
+        "article_id": "T07-A076",
+        "result": "PASS",
+        "precedence": 75,
+        "weight": 1,
+        "severity_band": "system_security",
+        "evidence": {
+          "predicate_kind": "violation_if_true",
+          "predicate_op": "all",
+          "predicate_matched": false,
+          "violation": false,
+          "enforcement_mode": "revert_tx"
+        }
+      },
+      {
+        "article_id": "T08-A098",
+        "result": "PASS",
+        "precedence": 75,
+        "weight": 1,
+        "severity_band": "system_security",
+        "evidence": {
+          "predicate_kind": "violation_if_true",
+          "predicate_op": "all",
+          "predicate_matched": false,
+          "violation": false,
+          "enforcement_mode": "rate_limit"
+        }
+      }
+    ],
+    "enforcement": {
+      "mode": "log",
+      "severity": "info",
+      "actions": []
+    },
+    "alignment": {
+      "before": 1,
+      "delta": 0,
+      "after": 1
+    }
+  },
+  "audit_hash": "48aab6f6728dba88fb0b55be1d79186f79415db6b9068ce8c0b8db6ea12b880c"
+}
