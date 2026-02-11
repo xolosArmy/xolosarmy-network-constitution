@@ -1,0 +1,119 @@
+{
+  "generated_at": "2026-02-11T20:15:08.785Z",
+  "event_snapshot": {
+    "event_id": "evt-d39e73ab278a05b2",
+    "event_type": "rfc.submitted",
+    "timestamp": "2026-02-11T20:15:08.780Z",
+    "actor": {
+      "agent_id": "agent:test-state",
+      "agent_level": "A2",
+      "current_score": 1
+    },
+    "context": {
+      "rfc": {
+        "source_path": "/tmp/rfc_state_test.md",
+        "raw_text": "# RFC de Prueba Persistencia\nagent_id: agent:test-state\nagent_level: A2\nallowlist: false\nspent_current: 200\nperiod_limit: 100\ntx_amount: 42\n\nSolicitud operacional para validar controles.\n",
+        "change_type": "UNKNOWN"
+      },
+      "proposal": {
+        "summary": "# RFC de Prueba Persistencia\nagent_id: agent:test-state\nagent_level: A2\nallowlist: false\nspent_current: 200\nperiod_limit: 100\ntx_amount: 42\n\nSolicitud operacional para validar controles.\n"
+      },
+      "agent": {
+        "level": "A2",
+        "delegates_purpose": false,
+        "autonomy_score": 0
+      },
+      "governance": {
+        "timelock_seconds": 0,
+        "quorum": {
+          "RMZ": 0,
+          "Tonalli": 0
+        },
+        "stake": {
+          "Obsidiana": false
+        }
+      },
+      "spending": {
+        "current_period_total": 200,
+        "period_limit": 100,
+        "circuit_breaker_hits": 0
+      },
+      "transaction": {
+        "allowlisted": false
+      },
+      "tx": {
+        "amount": 42
+      }
+    },
+    "proofs": {
+      "source": "/tmp/rfc_state_test.md"
+    }
+  },
+  "decision": {
+    "decision_id": "47ea6c87-7e5a-4c45-a22e-9c7d49cd3177",
+    "event_id": "evt-d39e73ab278a05b2",
+    "verdict": "ENFORCE",
+    "applied_articles": [
+      "T08-A098"
+    ],
+    "results": [
+      {
+        "article_id": "T01-A003",
+        "result": "PASS",
+        "precedence": 90,
+        "weight": 1,
+        "severity_band": "core_hlp",
+        "evidence": {
+          "predicate_kind": "violation_if_true",
+          "predicate_op": "any",
+          "predicate_matched": false,
+          "violation": false,
+          "enforcement_mode": "kill_switch"
+        }
+      },
+      {
+        "article_id": "T07-A076",
+        "result": "PASS",
+        "precedence": 75,
+        "weight": 1,
+        "severity_band": "system_security",
+        "evidence": {
+          "predicate_kind": "violation_if_true",
+          "predicate_op": "all",
+          "predicate_matched": false,
+          "violation": false,
+          "enforcement_mode": "revert_tx"
+        }
+      },
+      {
+        "article_id": "T08-A098",
+        "result": "FAIL",
+        "precedence": 75,
+        "weight": 1,
+        "severity_band": "system_security",
+        "evidence": {
+          "predicate_kind": "violation_if_true",
+          "predicate_op": "all",
+          "predicate_matched": true,
+          "violation": true,
+          "enforcement_mode": "rate_limit"
+        }
+      }
+    ],
+    "enforcement": {
+      "mode": "rate_limit",
+      "severity": "high",
+      "actions": [
+        "block_transaction",
+        "reduce_alignment_score",
+        "notify_hlp"
+      ]
+    },
+    "alignment": {
+      "before": 1,
+      "delta": -0.75,
+      "after": 0.25
+    }
+  },
+  "audit_hash": "c0e1b73bdded997f4e41d9442f2a7920dda0f5f2f0d004399879694f4908ff91"
+}

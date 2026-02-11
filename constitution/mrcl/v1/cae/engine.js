@@ -12,6 +12,7 @@ const {
   scoreAlignment
 } = require('./scorer');
 const { writeAuditBundle } = require('./audit');
+const stateManager = require('./state_manager');
 
 const ENFORCEMENT_STRENGTH = [
   'kill_switch',
@@ -158,7 +159,9 @@ class ConstitutionalAlignmentEngine {
     const violations = results.filter((r) => r.result !== 'PASS');
     const enforcement = buildEnforcement(violations);
 
-    const alignmentBefore = Number(event?.actor?.current_score);
+    const agentId = event?.actor?.agent_id || 'agent:unknown';
+    const agentState = stateManager.getAgent(agentId);
+    const alignmentBefore = Number(agentState?.alignment_score);
     const alignment = scoreAlignment(results, alignmentBefore, this.params);
 
     const decisionId = typeof crypto.randomUUID === 'function'
@@ -191,6 +194,15 @@ class ConstitutionalAlignmentEngine {
     });
 
     decision.audit_hash = audit.audit_hash;
+    const state = stateManager.applyDecision({ event, decision });
+    decision.alignment = state.alignment;
+    decision.state = {
+      restrictions: state.restrictions,
+      consecutive_fails: state.consecutive_fails,
+      spend_daily: state.spend_daily,
+      prev_audit_hash: state.prev_audit_hash,
+      last_audit_hash: state.last_audit_hash
+    };
 
     return {
       decision,

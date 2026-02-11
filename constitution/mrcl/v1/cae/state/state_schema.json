@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "type": "object",
+  "required": ["version", "updated_at", "agents"],
+  "properties": {
+    "version": { "type": "string" },
+    "updated_at": { "type": "string" },
+    "agents": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "agent_id",
+          "alignment_score",
+          "consecutive_fails",
+          "restrictions",
+          "counters",
+          "audit",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "agent_id": { "type": "string" },
+          "alignment_score": { "type": "number" },
+          "consecutive_fails": { "type": "number" },
+          "restrictions": {
+            "type": "object",
+            "required": ["warning", "restricted", "quarantine", "ban", "active"]
+          },
+          "counters": {
+            "type": "object",
+            "required": ["spend_daily"]
+          },
+          "audit": {
+            "type": "object",
+            "required": ["prev_audit_hash", "last_audit_hash"]
+          },
+          "created_at": { "type": "string" },
+          "updated_at": { "type": "string" }
+        }
+      }
+    }
+  }
+}

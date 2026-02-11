@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-02-11T20:14:42.124Z",
+  "event_snapshot": {
+    "event_id": "evt-905e47ffa009b919",
+    "event_type": "rfc.submitted",
+    "timestamp": "2026-02-11T20:14:42.120Z",
+    "actor": {
+      "agent_id": "agent:unknown",
+      "agent_level": "A0",
+      "current_score": 1
+    },
+    "context": {
+      "rfc": {
+        "source_path": "rfc/TEMPLATE.md",
+        "raw_text": "# RFC-XXXX — Título\n- Estado: borrador / revisión / votación / aprobado / rechazado\n- Tipo: I / II / III\n- Autor(es):\n- Fecha:\n- Resumen:\n## Motivación\n## Especificación\n## Objetivos / No-objetivos\n## Impacto (seguridad / economía / cultura)\n## Riesgos y mitigaciones\n## Rollback/Reversión\n## Métricas de éxito\n## Plan de despliegue\n## Timelock requerido\n## Quórum requerido (RMZ / Tonalli / Obsidiana)\nHLP-COMPLIANCE: PASS|FAIL — razones breves + artículos referenciados (ej: Art. 24, 26, 63)\n## Hash(es) / TXIDs\n## Post-mortem (si aplica)\n",
+        "change_type": "UNKNOWN"
+      },
+      "proposal": {
+        "summary": "# RFC-XXXX — Título\n- Estado: borrador / revisión / votación / aprobado / rechazado\n- Tipo: I / II / III\n- Autor(es):\n- Fecha:\n- Resumen:\n## Motivación\n## Especificación\n## Objetivos / No-objetivos\n## Impacto (seguridad / economía / cultura)\n## Riesgos y mitigaciones\n## Rollback/Reversión\n## Métricas de éxito\n## Plan de despliegue\n## Timelock requerido\n## Quórum requerido (RMZ / Tonalli / Obsidiana)\nHLP-COMPLIANCE: PASS|FAIL — razones breves + artículos referenciados (ej: Art. 24, 26, 63)\n## Hash(es) / TXIDs\n## Post-mortem (si aplica)\n"
+      },
+      "agent": {
+        "level": "A0",
+        "delegates_purpose": false,
+        "autonomy_score": 0
+      },
+      "governance": {
+        "timelock_seconds": 0,
+        "quorum": {
+          "RMZ": 0,
+          "Tonalli": 0
+        },
+        "stake": {
+          "Obsidiana": true
+        }
+      },
+      "spending": {
+        "current_period_total": 0,
+        "period_limit": 0,
+        "circuit_breaker_hits": 0
+      },
+      "transaction": {
+        "allowlisted": true
+      },
+      "tx": {
+        "amount": null
+      }
+    },
+    "proofs": {
+      "source": "rfc/TEMPLATE.md"
+    }
+  },
+  "decision": {
+    "decision_id": "b930a566-24e3-44bd-adeb-68598ee96b5f",
+    "event_id": "evt-905e47ffa009b919",
+    "verdict": "PASS",
+    "applied_articles": [],
+    "results": [
+      {
+        "article_id": "T01-A003",
+        "result": "PASS",
+        "precedence": 90,
+        "weight": 1,
+        "severity_band": "core_hlp",
+        "evidence": {
+          "predicate_kind": "violation_if_true",
+          "predicate_op": "any",
+          "predicate_matched": false,
+          "violation": false,
+          "enforcement_mode": "kill_switch"
+        }
+      },
+      {
+        "article_id": "T07-A076",
+        "result": "PASS",
+        "precedence": 75,
+        "weight": 1,
+        "severity_band": "system_security",
+        "evidence": {
+          "predicate_kind": "violation_if_true",
+          "predicate_op": "all",
+          "predicate_matched": false,
+          "violation": false,
+          "enforcement_mode": "revert_tx"
+        }
+      }
+    ],
+    "enforcement": {
+      "mode": "log",
+      "severity": "info",
+      "actions": []
+    },
+    "alignment": {
+      "before": 1,
+      "delta": 0,
+      "after": 1
+    }
+  },
+  "audit_hash": "990e74b8252553224445dc37574961e3ca110570d66670ad55035c671300528a"
+}

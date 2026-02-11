@@ -1,0 +1,69 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-02-11T20:15:08.864Z",
+  "agents": {
+    "agent:unknown": {
+      "agent_id": "agent:unknown",
+      "alignment_score": 1,
+      "consecutive_fails": 0,
+      "restrictions": {
+        "warning": false,
+        "restricted": false,
+        "quarantine": false,
+        "ban": false,
+        "active": []
+      },
+      "counters": {
+        "spend_daily": {
+          "day_utc": "2026-02-11",
+          "total": 0,
+          "count": 2,
+          "limit": 100
+        }
+      },
+      "audit": {
+        "prev_audit_hash": "b5dd6e358dddd17fb836706fc29275daeb1625ee86e58fb19efac59dd6117bb0",
+        "last_audit_hash": "990e74b8252553224445dc37574961e3ca110570d66670ad55035c671300528a"
+      },
+      "created_at": "2026-02-11T20:14:42.052Z",
+      "updated_at": "2026-02-11T20:14:42.127Z",
+      "last_event_id": "evt-905e47ffa009b919",
+      "last_decision_id": "b930a566-24e3-44bd-adeb-68598ee96b5f",
+      "last_verdict": "PASS"
+    },
+    "agent:test-state": {
+      "agent_id": "agent:test-state",
+      "alignment_score": 0,
+      "consecutive_fails": 2,
+      "restrictions": {
+        "warning": true,
+        "restricted": true,
+        "quarantine": true,
+        "ban": true,
+        "active": [
+          "warning",
+          "restricted",
+          "quarantine",
+          "ban"
+        ]
+      },
+      "counters": {
+        "spend_daily": {
+          "day_utc": "2026-02-11",
+          "total": 84,
+          "count": 2,
+          "limit": 5000
+        }
+      },
+      "audit": {
+        "prev_audit_hash": "c0e1b73bdded997f4e41d9442f2a7920dda0f5f2f0d004399879694f4908ff91",
+        "last_audit_hash": "8d998efabe7af6fa942af44a2195bbc42750f8ce964de225eec7e3a5cb6a45f4"
+      },
+      "created_at": "2026-02-11T20:15:08.787Z",
+      "updated_at": "2026-02-11T20:15:08.864Z",
+      "last_event_id": "evt-095bd843d7827900",
+      "last_decision_id": "d30e2396-fa02-4f79-a342-757b997089c7",
+      "last_verdict": "ENFORCE"
+    }
+  }
+}

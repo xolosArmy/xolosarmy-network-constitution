@@ -44,6 +44,7 @@ function buildCanonicalEvent(rawText, inputPath) {
   const timelock = extractNumber(rawText, /\b(?:timelock|timelock_seconds)\s*[:=]\s*([0-9]+)\b/i);
   const spendCurrent = extractNumber(rawText, /\b(?:current_period_total|spent_current)\s*[:=]\s*([0-9]*\.?[0-9]+)\b/i);
   const spendLimit = extractNumber(rawText, /\b(?:period_limit|spend_limit)\s*[:=]\s*([0-9]*\.?[0-9]+)\b/i);
+  const txAmount = extractNumber(rawText, /\b(?:tx[_ ]?amount|tx\.amount)\s*[:=]\s*([0-9]*\.?[0-9]+)\b/i);
 
   return {
     event_id: `evt-${crypto.randomBytes(8).toString('hex')}`,
@@ -85,6 +86,9 @@ function buildCanonicalEvent(rawText, inputPath) {
       },
       transaction: {
         allowlisted: !/allowlist\s*:\s*false/i.test(rawText)
+      },
+      tx: {
+        amount: txAmount == null ? null : txAmount
       }
     },
     proofs: {
@@ -114,6 +118,13 @@ function main() {
   console.log(`OVERALL: ${overall}`);
   console.log(`ENFORCEMENT: mode=${decision.enforcement.mode} severity=${decision.enforcement.severity} actions=${decision.enforcement.actions.join(',')}`);
   console.log(`ALIGNMENT: before=${decision.alignment.before.toFixed(4)} delta=${decision.alignment.delta.toFixed(4)} after=${decision.alignment.after.toFixed(4)}`);
+  const activeRestrictions = Array.isArray(decision?.state?.restrictions?.active)
+    ? decision.state.restrictions.active
+    : [];
+  console.log(`STATE: restrictions=${activeRestrictions.length ? activeRestrictions.join(',') : 'none'} consecutive_fails=${decision?.state?.consecutive_fails ?? 0}`);
+  if (decision?.state?.prev_audit_hash || decision?.state?.last_audit_hash) {
+    console.log(`AUDIT_CHAIN: prev=${decision.state.prev_audit_hash || 'null'} current=${decision.state.last_audit_hash || 'null'}`);
+  }
   console.log(`AUDIT: hash=${decision.audit_hash} file=${auditFile}`);
   console.log('EVIDENCE:');
   if (evidenceRows.length === 0) {
